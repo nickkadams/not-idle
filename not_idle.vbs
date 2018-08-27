@@ -1,6 +1,9 @@
-Set ws = CreateObject("WScript.Shell")
-Do
-    Wscript.Sleep 40000 ' Duration to wait (4 minutes)
-    ws.SendKeys "{F15}" ' Send F15 key or optionally use NUMLOCK 2x
-    ws.Echo "Not Idle"
+Dim objResult
+
+Set objShell = WScript.CreateObject("WScript.Shell")    
+
+Do While True
+  objResult = objShell.sendkeys("{F15}") ' Send fake input key
+  Wscript.Echo "Not idle!" ' Echo to command prompt
+  Wscript.Sleep (40000) ' Duration to wait (4 min)
 Loop
